@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{category}}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        {% include "header.html" %}
+        <div class = "content_wrap">
+            <h1>{{category}}</h1>
+            <p style="padding-top: 1vh; white-space: pre-line">
+                {{description}}
+            </p>
+        </div>
+        <div class = "products">
+            {% for product in products %}
+                <a src="">
+                    <div class="product">
+                        <img class="product_img" src="{{ product.picture }}" alt="Описание изображения">
+                        <p> <br>{{ product.name }} <br> Артикул: {{ product.article }} <br> 
+                            Основная мощность:
+                            {% if product.powerkWA is not none %}
+                                {{ product.powerkW }}/{{ product.powerkWA }} кВт/кВа
+                            {% else %}
+                                {{ product.powerkW }} кВт
+                            {% endif %}
+                            <br> Напряжение (В): {{ product.voltage }} <br> Цена: {{ product.price }} 
+                        </p>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        {% include "footer.html" %}
+    </body>
+</html>

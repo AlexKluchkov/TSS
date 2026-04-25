@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>О компании</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/static/styles.css">
+    </head>
+    <body>
+        {% include "header.html" %}
+        <div class = "content_wrap">
+            <img class="product_img" src="{{ product.picture }}" alt="Описание изображения">
+            <h1>{{product.name}}</h1>
+            <p>{{product.price}}</p>
+        </div>
+        <div class = "main_information">
+            <p>{{product.powerkW}}</p>
+            <p>{{product.powerkWA}}</p>
+            <p>{{product.guarantee}}</p>
+            <p>{{product.weight}}</p>
+            <div>{{product.full_description}}</div>
+        </div>
+        {% include "footer.html" %}
+    </body>
+</html>

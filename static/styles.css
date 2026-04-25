@@ -1,0 +1,103 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    color:black;
+    text-decoration: none;
+}
+
+.menubar{
+    background-color: #19355C;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 2vw; 
+    padding: 2vh 4vw 2vh 5vw; /*mergin*/
+}
+
+.menu_item{
+    font-size: 3vh; /*20px*/
+    text-align: center;
+
+    background-color:white;
+    border-style: solid;
+    border-color:whitesmoke;
+    margin-top: 1vh;
+    
+    display: grid;
+    place-items: center; /* сразу и вертикально, и горизонтально */
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+}
+
+.header{
+    padding: 17vh 7vw 40vh 7vw;
+    text-align: center;
+    font-size: 4vh;
+}
+
+.content_wrap{
+    padding: 7% 7%;
+    text-align: left;
+    font-size: 4vh;
+    /*padding-top: 1vh*/
+}
+
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 колонки */
+  gap: 5vh; /* отступы между элементами */
+}
+
+.product {
+  background: white;
+  padding: 20px;
+  text-align: center;
+}
+
+.product_img
+{
+    height: 30vh;
+    width: 39vh;
+    aspect-ratio: 3 / 2;
+}
+
+footer
+{
+    background-color: #19355C;
+    color: white;
+    padding: 5% 0% 5%;
+    font-size: 17px;
+}
+
+.first_column{
+   padding-left: 5%; 
+}
+
+@media (max-width: 1024px){
+    .header{
+        font-size: 3vh;
+    }
+    .menu_item{
+        font-size: 3vh;
+    }
+    .products {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 425px){
+    .header{
+        font-size: 2vh;
+    }
+    .menu_item{
+        font-size: 2vh;
+    }
+    .products {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
