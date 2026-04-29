@@ -8,5 +8,5 @@ class Product(BaseModel):
     powerkWA: Optional[str | None]
     article: str
     voltage: str
-    price: float
+    price: str
     picture: Optional[str]
