@@ -161,14 +161,16 @@ header {
 
 footer
 {
-    background-color: #19355C;
-    color: white;
-    padding: 5% 0% 5%;
-    font-size: 17px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: #19355C;
+  color: white;
+  padding: 5% 0% 5%;
+  font-size: 17px;
 }
 
-.first_column{
-   padding-left: 5%; 
+.column{
+  padding-left: 5%; 
 }
 
 @media (max-width: 1024px){
