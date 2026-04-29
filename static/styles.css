@@ -127,9 +127,20 @@ header {
 }
 
 .header{
-    padding: 17vh 7vw 40vh 7vw;
-    text-align: center;
-    font-size: 4vh;
+  padding: 17vh 7vw 40vh 7vw;
+  text-align: center;
+  font-size: 4vh;
+}
+
+.header_img{
+  display: block;
+  height: 100px;
+  width: 100%;
+  background-image: url('images/lightning.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /*background-attachment: fixed;*/ /*позволяет скролить изображение (делает изображение глубоким)*/
 }
 
 .content_wrap{
@@ -139,11 +150,15 @@ header {
     /*padding-top: 1vh*/
 }
 
+.content_wrap table{
+  margin-top: 10vh; 
+  margin-left: 30vw
+}
 
 .products {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 колонки */
-  gap: 5vh; /* отступы между элементами */
+  gap: 5vh;
 }
 
 .product {
@@ -175,7 +190,8 @@ footer
 
 @media (max-width: 1024px){
     .header{
-        font-size: 3vh;
+      padding: 17vh 7vw 30vh 7vw;
+      font-size: 3vh;
     }
     .menu_item{
         font-size: 3vh;
@@ -195,6 +211,11 @@ footer
     display: none;
   }
 
+  .content_wrap table{
+    margin-left: 0vw;
+    font-size: 3vh;
+  }
+
   .menu.active {
     display: flex;
   }
@@ -203,6 +224,13 @@ footer
     display: block;
   }
   /**/
+    .burger.active span:nth-child(1) {
+    transform: translateY(4.35px) rotate(45deg);
+  }
+  .burger.active span:nth-child(3) {
+    transform: translateY(-4.35px) rotate(-45deg);
+  }
+
   .burger span {
     margin-top: 2px; /*TODO*/
   }
