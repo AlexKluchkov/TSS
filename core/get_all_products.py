@@ -1,7 +1,8 @@
 from core.parser import parser
+from core.price_formatting import price_formatting
 from schemas.Product import Product
 
-from slugify import slugify
+#from slugify import slugify
 
 async def get_all_products(categoryId):
     root = await parser()
@@ -15,7 +16,7 @@ async def get_all_products(categoryId):
                 voltage = offer.xpath('.//param[@name="Выходное напряжение (В)"]/text()')[0] if offer.xpath('.//param[@name="Выходное напряжение (В)"]/text()') else None,
                 powerkW = offer.xpath('.//param[@name="Мощность номинальная, кВт"]/text()')[0] if offer.xpath('.//param[@name="Мощность номинальная, кВт"]/text()') else None,
                 powerkWA = offer.xpath('.//param[@name="Мощность номинальная, кВА"]/text()')[0] if offer.xpath('.//param[@name="Мощность номинальная, кВА"]/text()') else None,
-                price=float(offer.xpath('price/text()')[0]) if offer.xpath('price/text()') else None,
+                price=price_formatting(str(offer.xpath('price/text()')[0])),
                 picture=offer.xpath('picture/text()')[0] if offer.xpath('picture/text()') else None,
             )
             products.append(product)
