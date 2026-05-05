@@ -46,7 +46,7 @@ header {
   background: #19355C;
   display: flex;
   flex-direction: column;
-  padding: 80px 20px;
+  padding: 110px 20px;
   transition: right 0.35s ease;
   z-index: 1000;
 }
@@ -127,14 +127,14 @@ header {
 }
 
 .header{
-  padding: 17vh 7vw 40vh 7vw;
+  padding: 17vh 7vw 15vh 7vw;
   text-align: center;
   font-size: 4vh;
 }
 
 .header_img{
   display: block;
-  height: 120px;
+  height: 30vh;
   width: 100%;
   background-image: url('images/lightning.jpg');
   background-repeat: no-repeat;
@@ -190,7 +190,7 @@ footer
 
 @media (max-width: 1024px){
     .header{
-      padding: 17vh 7vw 28vh 7vw;
+      padding: 17vh 7vw 10vh 7vw;
       font-size: 3vh;
     }
     .menu_item{
@@ -233,5 +233,10 @@ footer
 
   .burger span {
     margin-top: 2px; /*TODO*/
+  }
+
+  footer
+  {
+    font-size: 12px;
   }
 }
