@@ -175,6 +175,17 @@ header {
     aspect-ratio: 3 / 2;
 }
 
+/*Списки*/
+ul{
+  font-size: 4vh; 
+  padding-top: 2vh
+}
+
+li{
+  margin-bottom: 1vh
+}
+/**/
+
 footer
 {
   display: grid;
