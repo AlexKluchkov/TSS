@@ -17,7 +17,7 @@ a {
 
 header {
   display: flex;
-  justify-content: space-between;/*flex-start;*/
+  justify-content: flex-start; /*space-between;*/
   align-items: center;
   /*padding: 15px;*/
   gap:15px;
@@ -36,6 +36,14 @@ header {
   transform: translateY(-9px) rotate(-45deg);
 }
 
+.menubar{
+  display: flex;
+}
+
+.menubar a{
+  font-size: 1.5vw;
+}
+
 /* Меню (выезжает справа) */
 .menu {
   position: fixed;
@@ -52,9 +60,8 @@ header {
 }
 
 .menu a {
-  text-decoration: none;
   margin-bottom: 20px;
-  font-size: 18px;
+  font-size: 3.5vw;
   transform: translateX(20px);
   opacity: 0;
   transition: all 0.3s ease;
@@ -90,7 +97,6 @@ header {
 }
 
 .menu_item{
-    font-size: 120%; /*20px*/
     text-align: center;
 
     background-color:white;
@@ -111,7 +117,7 @@ header {
   margin-right: 30px;
   width: 30px;
   height: 22px;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   cursor: pointer;
@@ -205,14 +211,27 @@ footer
       padding: 17vh 7vw 10vh 7vw;
       font-size: 3vh;
     }
-    .menu_item{
-        font-size: 3vh;
-    }
     .products {
         grid-template-columns: repeat(2, 1fr); 
     }
 }
-@media (max-width: 768px) {
+@media (max-width: 568px) {
+  header {
+    justify-content: space-between;
+  }
+
+  .menubar{
+    display: none;
+  }
+
+  .burger {
+    display: none;
+  }
+
+  .menu_item{
+    font-size: 1.4vw; /*20px*/
+  }
+
   .menu {
     position: absolute;
     top: 0vh;
