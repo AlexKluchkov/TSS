@@ -174,6 +174,10 @@ header {
   text-align: center;
 }
 
+.product:hover {
+  border: 2px solid black;
+}
+
 .product_img
 {
     height: 30vh;

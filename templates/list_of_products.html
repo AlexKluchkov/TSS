@@ -20,9 +20,9 @@
         <span class = "header_img"></span>
         <div class = "products">
             {% for product in products %}
-                <a src="">
+                <a href="/{{product.slug}}">
                     <div class="product">
-                        <img class="product_img" src="{{ product.picture }}" alt="Описание изображения">
+                        <img class="product_img" src="{{ product.picture }}" alt="Изображение отсутствует">
                         <p> <br>{{ product.name }} <br> Артикул: {{ product.article }} <br> 
                             Основная мощность:
                             {% if product.powerkWA is not none %}

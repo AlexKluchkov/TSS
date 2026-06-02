@@ -13,10 +13,26 @@
             <p>{{product.price}}</p>
         </div>
         <div class = "main_information">
-            <p>{{product.powerkW}}</p>
-            <p>{{product.powerkWA}}</p>
-            <p>{{product.guarantee}}</p>
-            <p>{{product.weight}}</p>
+            <p> <br>{{ product.name }} <br> Артикул: {{ product.article }} <br> 
+                Основная мощность:
+                {% if product.powerkWA is not none %}
+                    {{ product.powerkW }}/{{ product.powerkWA }} кВт/кВа
+                {% else %}
+                            {{ product.powerkW }} кВт
+                {% endif %}
+                <br> Напряжение (В): {{ product.voltage }} 
+                <br> Цена: {{ product.price }} Руб 
+                <br> Вес: {{product.weight}} кг <br>
+                {% if product.guarantee is not none %}
+                    Гарантия: {{product.guarantee}}
+                {% endif %} <br>
+                {% if product.noise_level is not none %}
+                    Уровень шума (dB/7м): {{product.noise_level}}
+                {% endif %} <br>
+                {% if product.length is not none %}
+                    Размер (Д;Ш;В; мм): {{product.length}}*{{product.width}}*{{product.height}}
+                {% endif %} <br>
+            </p>
             <div>{{product.full_description}}</div>
         </div>
         {% include "footer.html" %}
