@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import main_router, about, about_product
+from routers import main_router, about, about_product, on_startup
 from routers.gasoline import gasoline_power_plants, gasolinegenerators , inverter_gasolinegenerators
 from routers.diesel import diesel_power_plants, diesel_high_voltage_generators, diesel_portable, tss_premium, tss_prof, tss_slavyanka, tss_standart
 from fastapi.middleware.cors import CORSMiddleware
@@ -32,14 +32,7 @@ app.add_middleware(
 app.mount("/static", StaticFiles(directory="static"), name="static")
 #templates = Jinja2Templates(directory="view")
 
-from core.parsing_data_from_website import parsing_data_from_website
-
-from db.get_db import get_db
-
-@app.on_event("startup")
-async def on_startup():
-    db = next(get_db())
-    await parsing_data_from_website(db)
+app.include_router(on_startup.router)
 
 app.include_router(main_router.router)
 app.include_router(about.router)
