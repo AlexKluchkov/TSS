@@ -4,7 +4,6 @@ from db.get_db import get_db
 from fastapi import APIRouter
 
 router = APIRouter()
-templates = Jinja2Templates(directory="templates")
 
 @router.geton_event("startup")
 async def on_startup():
