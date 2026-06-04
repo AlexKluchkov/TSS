@@ -5,7 +5,7 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-@router.geton_event("startup")
+@router.on_event("startup")
 async def on_startup():
     db = next(get_db())
     await parsing_data_from_website(db)
