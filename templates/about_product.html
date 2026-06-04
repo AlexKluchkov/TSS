@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>О компании</title>
+        <title>{{product.name}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/vnd.microsoft.icon" href="https://tss.ru/favicon.ico">
+        <link rel="shortcut icon" type="image/x-icon" href="https://tss.ru/favicon.ico">
+        <link rel="apple-touch-icon" href="https://tss.ru/favicon.ico">
         <link rel="stylesheet" href="/static/styles.css">
     </head>
     <body>
@@ -28,6 +31,9 @@
                 {% endif %} <br>
                 {% if product.noise_level is not none %}
                     Уровень шума (dB/7м): {{product.noise_level}}
+                {% endif %} <br>
+                {% if product.launch_type is not none %}
+                    Тип запуска: {{product.launch_type}}
                 {% endif %} <br>
                 {% if product.length is not none %}
                     Размер (Д;Ш;В; мм): {{product.length}}*{{product.width}}*{{product.height}}

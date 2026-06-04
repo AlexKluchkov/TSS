@@ -20,6 +20,7 @@ class Offer(Base):
     guarantee = Column(String, nullable=True)
     weight = Column(Float, nullable=True)     # Вес (кг)
     noise_level = Column(Float, nullable=True) # Уровень шума (dB/7м)
+    launch_type = Column(String, nullable=True) # Тип запуска
 
     length = Column(Integer, nullable=True)    # Длина (мм)
     width = Column(Integer, nullable=True)     # Ширина (мм)

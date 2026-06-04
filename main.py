@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 
 #С базой данных
-#from routers.with_db import create_product, read_all_product, delete_product
+#from routers.with_db import read_all_product, delete_product
 
 #http://127.0.0.1:8000
 
@@ -54,7 +54,6 @@ app.include_router(tss_standart.router)
 
 
 # С использованием базы данных
-#app.include_router(create_product.router)
 #app.include_router(read_all_product.router)
 #app.include_router(delete_product.router)
 
