@@ -210,6 +210,33 @@ footer
   padding-left: 5%; 
 }
 
+/*About product*/
+.main_information{
+  margin-top: 7vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 3 колонки */
+  margin-bottom: 10vh;
+}
+
+.main_information table{
+  margin-top: 2vh; 
+  margin-left: 3vw
+}
+
+.about_product_img{
+  margin-left: 10vh;
+  height: 50vh;
+  width: 59vh;
+  aspect-ratio: 3 / 2;  
+}
+
+/*Поисковая строка*/
+.input_bar{
+  margin-top: 3vh;
+  height: 5vh;
+  width: 70vw;
+}
+
 @media (max-width: 1024px){
     .header{
       padding: 17vh 7vw 10vh 7vw;
@@ -217,6 +244,26 @@ footer
     }
     .products {
         grid-template-columns: repeat(2, 1fr); 
+    }
+
+    /*About product*/
+    .main_information{
+      margin-top: 7vh;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr); 
+      margin-bottom: 5vh;
+    }
+
+    .main_information table{
+      margin-top: 2vh; 
+      margin-left: 3vw;
+    }
+
+    .about_product_img{
+      margin-left: 0vh;
+      height: 50vh;
+      width: 59vh;
+      aspect-ratio: 3 / 2;  
     }
 }
 @media (max-width: 568px) {
@@ -267,7 +314,7 @@ footer
   }
 
   .burger span {
-    margin-top: 2px; /*TODO*/
+    margin-top: 2px; 
   }
 
   .products {
@@ -278,4 +325,12 @@ footer
   {
     font-size: 12px;
   }
+
+  /*About product*/
+  .about_product_img{
+      margin-left: 0vh;
+      height: 40vh;
+      width: 49vh;
+      aspect-ratio: 3 / 2;  
+    }
 }

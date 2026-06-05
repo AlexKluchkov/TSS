@@ -11,35 +11,83 @@
     <body>
         {% include "header.html" %}
         <div class = "content_wrap">
-            <img class="product_img" src="{{ product.picture }}" alt="Описание изображения">
             <h1>{{product.name}}</h1>
-            <p>{{product.price}}</p>
-        </div>
-        <div class = "main_information">
-            <p> <br>{{ product.name }} <br> Артикул: {{ product.article }} <br> 
-                Основная мощность:
-                {% if product.powerkWA is not none %}
-                    {{ product.powerkW }}/{{ product.powerkWA }} кВт/кВа
-                {% else %}
-                            {{ product.powerkW }} кВт
-                {% endif %}
-                <br> Напряжение (В): {{ product.voltage }} 
-                <br> Цена: {{ product.price }} Руб 
-                <br> Вес: {{product.weight}} кг <br>
-                {% if product.guarantee is not none %}
-                    Гарантия: {{product.guarantee}}
-                {% endif %} <br>
-                {% if product.noise_level is not none %}
-                    Уровень шума (dB/7м): {{product.noise_level}}
-                {% endif %} <br>
-                {% if product.launch_type is not none %}
-                    Тип запуска: {{product.launch_type}}
-                {% endif %} <br>
-                {% if product.length is not none %}
-                    Размер (Д;Ш;В; мм): {{product.length}}*{{product.width}}*{{product.height}}
-                {% endif %} <br>
-            </p>
-            <div>{{product.full_description}}</div>
+            <div class = "main_information">
+                <img class="about_product_img" src="{{ product.picture }}" alt="Описание изображения">
+                <div>
+                    <table >
+                        <tr>
+                            <td>Артикул</th>
+                            <td>{{ product.article }}</th>
+                        </tr>
+                        <tr>
+                            <td>Цена</td>
+                            <td>{{product.price}} Руб</td>
+                        </tr>
+                        {% if product.powerkWA is not none %}
+                            <tr>
+                                <td>Основная мощность</td>
+                                <td>
+                                    {{ product.powerkW }}/{{ product.powerkWA }} кВт/кВа
+                                </td>
+                            </tr>
+                        {% endif %}
+                        {% if product.voltage is not none %}
+                        <tr>
+                            <td>Напряжение</td>
+                            <td>
+                                {{ product.voltage }} В
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% if product.weight is not none %}
+                        <tr>
+                            <td>Вес</td>
+                            <td>
+                                {{ product.weight }} кг
+                            </td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td>Гарантия</td>
+                            {% if product.guarantee is not none %}
+                                <td>
+                                    {{ product.guarantee }}
+                                </td>
+                            {% else %}
+                                <td>
+                                    Гарантии нет
+                                </td>
+                            {% endif %}
+                        </tr>
+                        {% if product.noise_level is not none %}
+                        <tr>
+                            <td>Уровень шума</td>
+                            <td>
+                                {{ product.noise_level }} (dB/7м)
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% if product.length is not none %}
+                        <tr>
+                            <td>Размер (Д;Ш;В; мм)</td>
+                            <td>
+                                {{product.length}}*{{product.width}}*{{product.height}}
+                            </td>
+                        </tr>
+                        {% endif %}
+                        {% if product.launch_type is not none %}
+                        <tr>
+                            <td>Тип запуска</td>
+                            <td>
+                                {{ product.launch_type }}
+                            </td>
+                        </tr>
+                        {% endif %}
+                    </table>
+                </div>
+            </div>
+            {{ product.full_description | safe}}
         </div>
         {% include "footer.html" %}
     </body>
