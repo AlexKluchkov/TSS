@@ -17,7 +17,7 @@ def search_of_product(request: Request, q: str = Query(..., min_length=1), db: S
     if not products:
         return templates.TemplateResponse(
             "search_products.html",
-            {"request": request, "search": f"Найдено товаров: {len(products)}", "products": None}
+            {"request": request, "search": q , "find_results": f"Найдено товаров: {len(products)}", "products": None}
         )
 
     products_schema = [
@@ -27,5 +27,5 @@ def search_of_product(request: Request, q: str = Query(..., min_length=1), db: S
 
     return templates.TemplateResponse(
         "search_products.html",
-        {"request": request, "search": f"Найдено товаров: {len(products)}", "products": products_schema}
+        {"request": request, "search": q , "find_results": f"Найдено товаров: {len(products)}", "products": products_schema}
     )
