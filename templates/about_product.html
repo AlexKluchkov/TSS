@@ -87,7 +87,9 @@
                     </table>
                 </div>
             </div>
-            {{ product.full_description | safe}}
+            {% if product.launch_type is not none %}
+                {{ product.full_description | safe}}
+            {% endif %}
         </div>
         {% include "footer.html" %}
     </body>

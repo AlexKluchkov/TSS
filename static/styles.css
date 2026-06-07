@@ -214,7 +214,7 @@ footer
 .main_information{
   margin-top: 7vh;
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 3 колонки */
+  grid-template-columns: repeat(2, 1fr); /* 2 колонки */
   margin-bottom: 10vh;
 }
 
@@ -231,10 +231,10 @@ footer
 }
 
 /*Поисковая строка*/
-.input_bar{
+#search_bar{
   margin-top: 3vh;
   height: 5vh;
-  width: 70vw;
+  width: 78vw;
 }
 
 @media (max-width: 1024px){
@@ -268,6 +268,7 @@ footer
 }
 @media (max-width: 568px) {
   header {
+    width: 100%;
     justify-content: space-between;
   }
 
@@ -332,5 +333,11 @@ footer
       height: 40vh;
       width: 49vh;
       aspect-ratio: 3 / 2;  
-    }
+  }
+  /*Поисковая строка*/
+  #search_bar{
+    margin-top: 3vh;
+    height: 5vh;
+    width: 28vw;
+  }
 }

@@ -12,14 +12,14 @@
             <a class="menu_item" href="/gasoline_power_plants">БЕНЗИНОВЫЕ ЭЛЕКТРОСТАНЦИИ</a>
             <a class="menu_item" href="/about">О КОМПАНИИ</a>
         </div>
-        <form class = "search_bar" action="/" method="post">
-            <input class = "input_bar" placeholder = "Поиск товара" type="text" name="product" required>
+        <div style="margin-left: 20vw" class="burger" id="burger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <form action="/search" method="get">
+            <input id = "search_bar" type="text" name="q" placeholder="Поиск товара">
         </form>
-    </div>
-    <div style="margin-left: 20vw" class="burger" id="burger">
-        <span></span>
-        <span></span>
-        <span></span>
     </div>
 
     <div id="menu" class="menu">

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from routers import main_router, about, about_product, on_startup
+from routers import main_router, about, about_product, on_startup, search_of_product
 from routers.gasoline import gasoline_power_plants, gasolinegenerators , inverter_gasolinegenerators
 from routers.diesel import diesel_power_plants, diesel_high_voltage_generators, diesel_portable, tss_premium, tss_prof, tss_slavyanka, tss_standart
 from fastapi.middleware.cors import CORSMiddleware
@@ -30,7 +30,6 @@ app.add_middleware(
 )
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
-#templates = Jinja2Templates(directory="view")
 
 app.include_router(on_startup.router)
 
@@ -57,4 +56,7 @@ app.include_router(tss_standart.router)
 #app.include_router(read_all_product.router)
 #app.include_router(delete_product.router)
 
+#Поисковая строка
+app.include_router(search_of_product.router)
+#О проукте
 app.include_router(about_product.router)
