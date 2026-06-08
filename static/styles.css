@@ -230,6 +230,11 @@ footer
   aspect-ratio: 3 / 2;  
 }
 
+.one_chars_item_title_element{
+  font-size: 3vw;
+  color: #19355C;
+}
+
 /*Поисковая строка*/
 #search_bar{
   margin-top: 3vh;

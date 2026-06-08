@@ -58,5 +58,5 @@ app.include_router(tss_standart.router)
 
 #Поисковая строка
 app.include_router(search_of_product.router)
-#О проукте
+#О продукте
 app.include_router(about_product.router)
