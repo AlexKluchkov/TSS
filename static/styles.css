@@ -15,6 +15,10 @@ a {
     padding: 15px;
 }
 
+b{
+  font-size: 2vw;
+}
+
 header {
   display: flex;
   justify-content: flex-start; /*space-between;*/
@@ -135,7 +139,7 @@ header {
 .header{
   padding: 17vh 7vw 15vh 7vw;
   text-align: center;
-  font-size: 4vh;
+  font-size: 3vh;
 }
 
 .header_img{
@@ -150,7 +154,7 @@ header {
 }
 
 .content_wrap{
-    padding: 7% 7%;
+    padding: 7% 7% 5% 7%;
     text-align: left;
     font-size: 4vh;
     /*padding-top: 1vh*/
@@ -188,7 +192,8 @@ header {
 /*Списки*/
 ul{
   font-size: 4vh; 
-  padding-top: 2vh
+  padding-left: 2vw;
+  padding-top: 1vh;
 }
 
 li{
@@ -207,6 +212,7 @@ footer
 }
 
 .column{
+  font-size: 1.2vw;
   padding-left: 5%; 
 }
 
@@ -240,6 +246,43 @@ footer
   margin-top: 3vh;
   height: 5vh;
   width: 78vw;
+}
+
+@media (min-width: 2000px){
+.header{
+    padding: 17vh 7vw 10vh 7vw;
+    font-size: 3vh;
+  }
+  .products {
+      grid-template-columns: repeat(3, 1fr); 
+  }
+
+  /*About product*/
+  .main_information{
+    margin-top: 7vh;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); 
+    margin-bottom: 5vh;
+  }
+
+  .main_information table{
+    margin-top: 2vh; 
+    margin-left: 3vw;
+  }
+
+  .about_product_img{
+    margin-left: 0vh;
+    height: 50vh;
+    width: 59vh;
+    aspect-ratio: 3 / 2;  
+  }
+
+  .content_wrap{
+    padding: 7% 7% 5% 7%;
+    text-align: left;
+    font-size: 3vh;
+    /*padding-top: 1vh*/
+  }
 }
 
 @media (max-width: 1024px){

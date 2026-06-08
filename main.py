@@ -31,7 +31,7 @@ app.add_middleware(
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-app.include_router(on_startup.router)
+#app.include_router(on_startup.router)
 
 app.include_router(main_router.router)
 app.include_router(about.router)
