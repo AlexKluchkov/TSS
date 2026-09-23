@@ -14,7 +14,7 @@ from routers.user import create_user, read_user, delete_user, update_user, about
 
 #http://127.0.0.1:8000
 
-
+#для локальной работы
 #postgrSQL
 #Порт: 5432
 #Суперпользователь: postgres
