@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from sqlalchemy import or_
 from db.get_db import get_db
 from models.offer import Offer
-from schemas.ProductListRead import ProductListRead
+from schemas.products.ProductListRead import ProductListRead
 
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates

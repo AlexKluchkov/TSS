@@ -1,4 +1,4 @@
-from schemas.Product import Product
+from schemas.products.Product import Product
 
 class ProductListRead(Product):
     id: int

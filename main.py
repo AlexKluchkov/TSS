@@ -1,12 +1,16 @@
 from fastapi import FastAPI
-from routers import main_router, about, about_product, on_startup, search_of_product, serve_verification_file
+from routers import login_page, login, logout, main_router, about, about_product, on_startup, search_of_product, serve_verification_file
 from routers.gasoline import gasoline_power_plants, gasolinegenerators , inverter_gasolinegenerators
 from routers.diesel import diesel_power_plants, diesel_high_voltage_generators, diesel_portable, tss_premium, tss_prof, tss_slavyanka, tss_standart
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
+from models.offer import Offer
+from models.offerimage import OfferImage
 
-#С базой данных
-#from routers.with_db import read_all_product, delete_product
+# Администрирование
+from routers.website_administration import create_product, read_all_product, delete_product, update_product
+# Администрирование пользователей
+from routers.user import create_user, read_user, delete_user, update_user, about_user
 
 #http://127.0.0.1:8000
 
@@ -31,7 +35,7 @@ app.add_middleware(
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
-app.include_router(on_startup.router)
+#app.include_router(on_startup.router)
 
 app.include_router(main_router.router)
 app.include_router(about.router)
@@ -52,14 +56,28 @@ app.include_router(tss_slavyanka.router)
 app.include_router(tss_standart.router)
 
 
-# С использованием базы данных
-#app.include_router(read_all_product.router)
-#app.include_router(delete_product.router)
+# Администрирование сайта
+app.include_router(create_product.router)
+app.include_router(read_all_product.router)
+app.include_router(update_product.router)
+app.include_router(delete_product.router)
+
+#авторизация
+app.include_router(login.router)
+app.include_router(login_page.router)
+
+#Пользователь
+app.include_router(create_user.router)
+app.include_router(read_user.router)
+app.include_router(update_user.router)
+app.include_router(delete_user.router)
+app.include_router(login.router)
+app.include_router(about_user.router)
+app.include_router(logout.router)
 
 #Поисковая строка
 app.include_router(search_of_product.router)
 #О продукте
 app.include_router(about_product.router)
-
 
 app.include_router(serve_verification_file.router)

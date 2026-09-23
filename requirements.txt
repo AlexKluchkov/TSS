@@ -18,4 +18,4 @@ sqlalchemy
 psycopg2-binary
 
 #Для расписания по парсингу
-apscheduler
+#apscheduler

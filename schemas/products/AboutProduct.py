@@ -1,4 +1,4 @@
-from schemas.Product import Product
+from schemas.products.Product import Product
 from typing import Optional
 
 class AboutProduct(Product):

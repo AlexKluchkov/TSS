@@ -1,14 +1,14 @@
 from sqlalchemy import Column, Integer, Float, String
+from sqlalchemy.orm import relationship
 from db.database import Base
 
 class Offer(Base):
-    __tablename__ = "Offer"
+    __tablename__ = "offers"
 
     id = Column(Integer, primary_key=True, index=True)
-    name = Column(String, index=True)
+    name = Column(String, unique=True, index=True)
     slug = Column(String)
     price = Column(String, index=True)
-    picture = Column(String, nullable=True)
     powerkW = Column(Float, nullable=True)
     powerkWA = Column(Float, nullable=True)
     article = Column(String, index=True)
@@ -27,3 +27,9 @@ class Offer(Base):
     height = Column(Integer, nullable=True)    # Высота (мм)
     #
     full_description = Column(String, nullable=True)
+
+    images = relationship(
+        "OfferImage",
+        back_populates="offer",
+        cascade="all, delete-orphan"
+    )

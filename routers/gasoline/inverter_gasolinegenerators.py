@@ -1,9 +1,9 @@
 from fastapi import APIRouter, Request, Depends
 from fastapi.responses import HTMLResponse
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, selectinload
 from db.get_db import get_db
 from models.offer import Offer
-from schemas.ProductListRead import ProductListRead
+from schemas.products.ProductListRead import ProductListRead
 
 from fastapi.templating import Jinja2Templates
 
@@ -16,16 +16,19 @@ description = "Инверторные бензиновые генераторы 
 @router.get("/gasoline_power_plants/inverter_gasolinegenerators", response_class=HTMLResponse)
 async def inverter_gasolinegenerators(request: Request, db: Session = Depends(get_db)):
     #"192425" это id Бензогенераторов инверторных
-    products = db.query(Offer).filter(Offer.categoryID == "192425").all()  #offset(skip).limit(limit).all()
-    if not products:
-        raise HTTPException(status_code=404)
+    products = (db.query(Offer).options(selectinload(Offer.images)).filter(Offer.categoryID == "192425").all())
 
+    if not products:
+        raise HTTPException(
+            status_code=404,
+            detail="Товары не найдены"
+        )
     products_schema = [
-        ProductListRead.model_validate(p)
-        for p in products
+        ProductListRead.model_validate(product)
+        for product in products
     ]
-    
+
     return templates.TemplateResponse(
-        "list_of_products.html",
-        {"request": request, "category": category, "description": description, "products": products}
+        "list_of_products.html", 
+        {"request": request, "category": category, "description": description, "products": products_schema}
     )
