@@ -12,14 +12,6 @@ from routers.website_administration import create_product, read_all_product, del
 # Администрирование пользователей
 from routers.user import create_user, read_user, delete_user, update_user, about_user
 
-#http://127.0.0.1:8000
-
-#для локальной работы
-#postgrSQL
-#Порт: 5432
-#Суперпользователь: postgres
-#Пароль: 11111
-
 app = FastAPI()
 
 app.mount("/static", StaticFiles(directory="static"), name="static")

@@ -5,12 +5,6 @@ import os
 #для github
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-#локально
-#DATABASE_URL = f"postgresql://postgres:11111@localhost:5432/tssdatabase"
-
-#для timeweb
-#DATABASE_URL = f"postgresql://asvstroiuser:11111@localhost:5432/tssdatabase"
-
 engine = create_engine(DATABASE_URL)
 
 SessionLocal = sessionmaker(
