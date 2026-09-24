@@ -8,6 +8,9 @@ pydantic
 #Для парсинга сайтов
 httpx
 lxml
+uuid
+aiohttp
+pwdlib
 
 #слаггер
 python-slugify
