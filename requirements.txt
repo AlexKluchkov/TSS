@@ -21,6 +21,7 @@ python-slugify
 
 #Для базы данных
 sqlalchemy 
+pydantic[email]
 #Может быть, добавит для миграций alembic 
 psycopg2-binary
 
