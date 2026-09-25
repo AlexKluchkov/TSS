@@ -13,7 +13,7 @@
         <div class = "content_wrap">
             <h1>{{product.name}}</h1>
             <div class = "main_information">
-                <img class="about_product_img" src="{{ product.picture }}" alt="Описание изображения">
+                <img class="about_product_img" src="/{{ product.images[0].local_path }}" alt="Описание изображения">
                 <div>
                     <table >
                         <tr>
