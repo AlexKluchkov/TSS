@@ -13,6 +13,9 @@ aiohttp
 pwdlib[argon2]
 jwt
 
+#для Form(...)
+python-multipart
+
 #слаггер
 python-slugify
 
