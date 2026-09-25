@@ -1,5 +1,6 @@
 from fastapi import FastAPI
-from routers import login_page, login, logout, main_router, about, about_product, on_startup, search_of_product, serve_verification_file
+from routers import login_page, login, logout, main_router, about, about_product, on_startup, search_of_product
+#serve_verification_file
 from routers.gasoline import gasoline_power_plants, gasolinegenerators , inverter_gasolinegenerators
 from routers.diesel import diesel_power_plants, diesel_high_voltage_generators, diesel_portable, tss_premium, tss_prof, tss_slavyanka, tss_standart
 from fastapi.middleware.cors import CORSMiddleware
