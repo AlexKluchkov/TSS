@@ -34,9 +34,9 @@ async def download_image(session: aiohttp.ClientSession, picture_url: str):
                     f.write(content)
                 print("Saved to:", filepath)
                 return filepath
-            except aiohttp.ClientResponseError as e:
-                print(
-                    f"HTTP ошибка {e.status}, "
-                    f"URL: {picture_url}"
-                )
-                return None
+        except aiohttp.ClientResponseError as e:
+            print(
+                f"HTTP ошибка {e.status}, "
+                f"URL: {picture_url}"
+            )
+            return None
