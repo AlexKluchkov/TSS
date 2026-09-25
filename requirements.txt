@@ -11,6 +11,7 @@ lxml
 uuid
 aiohttp
 pwdlib
+jwt
 
 #слаггер
 python-slugify
