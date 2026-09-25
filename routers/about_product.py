@@ -13,7 +13,7 @@ templates = Jinja2Templates(directory="templates")
 
 @router.get("/product/{product_slug}", response_class=HTMLResponse)
 async def about_product(request: Request, product_slug: str, db: Session = Depends(get_db)):
-    product = AboutProductRead.model_validate(db.query(Offer).filter(Offer.slug == product_slug).first())
+    products = (db.query(Offer).options(selectinload(Offer.images)).filter(Offer.slug == product_slug).first())
     if product is None:
         raise HTTPException(status_code=404, detail="Product not found")
     return templates.TemplateResponse("about_product.html",{"request": request, "product": product})
