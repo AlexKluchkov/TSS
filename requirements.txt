@@ -10,7 +10,7 @@ httpx
 lxml
 uuid
 aiohttp
-pwdlib
+pwdlib[argon2]
 jwt
 
 #слаггер
