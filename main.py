@@ -73,4 +73,4 @@ app.include_router(search_of_product.router)
 #О продукте
 app.include_router(about_product.router)
 
-app.include_router(serve_verification_file.router)
+#app.include_router(serve_verification_file.router)
